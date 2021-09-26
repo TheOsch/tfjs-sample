@@ -15,7 +15,9 @@ mainly because of its simplicity.
 */
 
 // Import the TFJS 
-const tf = require('@tensorflow/tfjs');
+// This module is optimized for Node.js using CPU. If you've got a good GPU you can try
+// '@tensorflow/tfjs-node-gpu' instead.
+const tf = require('@tensorflow/tfjs-node');
 
 // Some helper functions
 const f = require('./functions');
@@ -52,7 +54,7 @@ const xTrain = minstData.map(line => line.slice(1));
 console.log('Training images:');
 f.displayMatrix(xTrain);
 
-const labels = minstData.map(line => line[0]);
+const labels = minstData.map(line => Number.parseInt(line[0]));
 console.log('Correct labels:');
 f.displayVector(labels);
 
@@ -60,7 +62,7 @@ f.displayVector(labels);
 It's time to transfer our data to TF.js tensors
 */
 
-const xTensor = tf.tensor(xTrain);
+const xTensor = tf.tensor2d(xTrain, [xTrain.length, xTrain[0].length], 'float32');
 
 /*
 Since this is a multiclass classification problem, we will One Hot Encode
