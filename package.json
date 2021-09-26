@@ -1,0 +1,28 @@
+{
+  "name": "tfjs-sample",
+  "version": "0.0.1",
+  "description": "A command-line sample of TFjs",
+  "main": "sample.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheOsch/tfjs-sample.git"
+  },
+  "keywords": [
+    "tensorflow",
+    "tf"
+  ],
+  "author": "Vyacheslav Sokolov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheOsch/tfjs-sample/issues"
+  },
+  "homepage": "https://github.com/TheOsch/tfjs-sample#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^3.9.0",
+    "@tensorflow/tfjs-node": "^3.9.0",
+    "@tensorflow/tfjs-node-gpu": "^3.9.0"
+  }
+}
